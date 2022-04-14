@@ -1,6 +1,10 @@
 {
   "name": "codeql",
+<<<<<<< HEAD
   "version": "1.1.8",
+=======
+  "version": "2.1.9",
+>>>>>>> main
   "private": true,
   "description": "CodeQL action",
   "scripts": {

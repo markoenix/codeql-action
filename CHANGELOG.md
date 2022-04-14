@@ -1,6 +1,11 @@
 # CodeQL Action Changelog
 
 ## 1.1.8 - 08 Apr 2022
+## [UNRELEASED]
+
+- Add `working-directory` input to the `autobuild` action. [#1024](https://github.com/github/codeql-action/pull/1024)
+
+## 2.1.8 - 08 Apr 2022
 
 - Update default CodeQL bundle version to 2.8.5. [#1014](https://github.com/github/codeql-action/pull/1014)
 - Fix error where the init action would fail due to a GitHub API request that was taking too long to complete [#1025](https://github.com/github/codeql-action/pull/1025)
