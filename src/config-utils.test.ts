@@ -1437,7 +1437,7 @@ const parsePacksMacro = test.macro({
     t: ExecutionContext<unknown>,
     packsByLanguage: string[] | Record<string, string[]>,
     languages: Language[],
-    expected: Partial<Record<Language, configUtils.PackWithVersion[]>>
+    expected: Partial<Record<Language, string[]>>
   ) =>
     t.deepEqual(
       configUtils.parsePacksFromConfig(packsByLanguage, languages, "/a/b"),
@@ -1490,10 +1490,7 @@ const invalidPackNameMacro = test.macro({
 
 test("no packs", parsePacksMacro, {}, [], {});
 test("two packs", parsePacksMacro, ["a/b", "c/d@1.2.3"], [Language.cpp], {
-  [Language.cpp]: [
-    { packName: "a/b", version: undefined },
-    { packName: "c/d", version: clean("1.2.3") as string },
-  ],
+  [Language.cpp]: ["a/b", "c/d@1.2.3"],
 });
 test(
   "two packs with spaces",
@@ -1501,10 +1498,7 @@ test(
   [" a/b ", " c/d@1.2.3 "],
   [Language.cpp],
   {
-    [Language.cpp]: [
-      { packName: "a/b", version: undefined },
-      { packName: "c/d", version: clean("1.2.3") as string },
-    ],
+    [Language.cpp]: ["a/b", "c/d@1.2.3"],
   }
 );
 test(
@@ -1516,14 +1510,8 @@ test(
   },
   [Language.cpp, Language.java, Language.csharp],
   {
-    [Language.cpp]: [
-      { packName: "a/b", version: undefined },
-      { packName: "c/d", version: clean("1.2.3") as string },
-    ],
-    [Language.java]: [
-      { packName: "d/e", version: undefined },
-      { packName: "f/g", version: clean("1.2.3") as string },
-    ],
+    [Language.cpp]: ["a/b", "c/d@1.2.3"],
+    [Language.java]: ["d/e", "f/g@1.2.3"],
   }
 );
 
