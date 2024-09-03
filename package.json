@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@actions/artifact": "^1.0.0",
+    "@actions/artifact": "^2.1.7",
     "@actions/core": "^1.4.0",
     "@actions/exec": "^1.1.0",
     "@actions/github": "^4.0.0",
